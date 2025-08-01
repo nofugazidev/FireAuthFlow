@@ -66,7 +66,8 @@ function loginUser() {
       window.location.href = "index.html";
     })
     .catch((error) => {
-      alert(error.message);
+    //   alert(error.message);
+    alert('wrong password or email')
       console.warn(error.message);
     });
 }
