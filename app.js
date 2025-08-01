@@ -3,6 +3,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 //   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
 
@@ -66,8 +67,8 @@ function loginUser() {
       window.location.href = "index.html";
     })
     .catch((error) => {
-    //   alert(error.message);
-    alert('wrong password or email')
+      //   alert(error.message);
+      alert("wrong password or email");
       console.warn(error.message);
     });
 }
@@ -84,3 +85,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // logout function
+function LogoutUser() {
+  signOut(auth).then(() => {
+    window.location.href = "login.html";
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logOutButton = document.getElementById("logOutButton");
+
+  if (logOutButton) {
+    const LogOut = () => logOutButton.addEventListener("click", LogoutUser);
+    LogOut();
+  } else {
+    console.warn("warning: html button element not found");
+  }
+});
