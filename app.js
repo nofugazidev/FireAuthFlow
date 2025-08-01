@@ -36,6 +36,7 @@ function registerUser() {
     })
     .catch((error) => {
       alert(error.message);
+      console.warn(error.message);
     });
 }
 
@@ -47,10 +48,38 @@ document.addEventListener("DOMContentLoaded", () => {
       registrationButton.addEventListener("click", registerUser);
     Register();
   } else {
-    console.warn('warning: html button element not found')
+    console.warn("warning: html button element not found");
   }
 });
 
 // login function
+function loginUser() {
+  const emailInput = document.getElementById("logEmailInput");
+  const passwordInput = document.getElementById("logPasswordInput");
+
+  const email = emailInput.value;
+  const password = passwordInput.value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredentials) => {
+      const user = userCredentials.user;
+      window.location.href = "index.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+      console.warn(error.message);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loginButton = document.getElementById("loginButton");
+
+  if (loginButton) {
+    const Login = () => loginButton.addEventListener("click", loginUser);
+    Login();
+  } else {
+    console.warn("warning: html button element not found");
+  }
+});
 
 // logout function
