@@ -3,14 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Welcome to NoFormik</title>
   </head>
   <body>
-    <h1>Landing Page</h1>
-    <button type="submit" id="logOutButton">logout</button>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="/assets/logo.png" alt="logo-image" />
+          <h3>FireAuthFlow</h3>
+        </div>
+        <div class="nav-items">
+          <a href="/index.html">home</a>
+          <a href="#">about</a>
+          <a href="#">products</a>
+        </div>
 
-       <script src="app.js" type="module"></script>
+        <div class="btn">
+          <button type="submit" id="logOutButton">logout</button>
+        </div>
 
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+      </nav>
 
+      <div id="mobile-menu">
+        <div class="nav-items">
+          <li>
+            <a href="/index.html">home</a>
+          </li>
+          <li><a href="#">about</a></li>
+          <li>
+            <a href="#">products</a>
+          </li>
+        </div>
+
+        <div class="btn">
+          <button type="submit" id="mobileLogOutButton">logout</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js" type="module"></script>
   </body>
 </html>

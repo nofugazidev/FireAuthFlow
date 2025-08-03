@@ -5,7 +5,6 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-//   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHyjsIpnMt232LW3SUhvDQvIDBqxP4NwY",
@@ -20,7 +19,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-//   const analytics = getAnalytics(app);
 
 // register function
 function registerUser() {
@@ -84,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
 // logout function
 function LogoutUser() {
   signOut(auth).then(() => {
@@ -101,3 +100,34 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("warning: html button element not found");
   }
 });
+
+// i know this is bad; God forgive me
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileLogOutButton = document.getElementById("mobileLogOutButton");
+
+  if (mobileLogOutButton) {
+    const LogOut = () => mobileLogOutButton.addEventListener("click", LogoutUser);
+    LogOut();
+  } else {
+    console.warn("warning: html button element not found");
+  }
+});
+
+// toogling of the hamburger menu
+function displayMenu() {
+  const menu = document.getElementById("mobile-menu");
+
+  menu.classList.toggle("show");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.getElementById("menu-icon");
+
+  const toggleMenu = () => {
+    menuIcon.addEventListener("click", displayMenu);
+  };
+
+  toggleMenu();
+});
+
+
