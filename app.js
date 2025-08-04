@@ -138,6 +138,6 @@ function requireAuth(){
   }
 }
 
-requireAuth();
+// requireAuth();
 
 
