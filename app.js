@@ -31,6 +31,7 @@ function registerUser() {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredentials) => {
       const user = userCredentials.user;
+      localStorage.setItem("auth", "true");
       window.location.href = "index.html";
     })
     .catch((error) => {
@@ -62,6 +63,7 @@ function loginUser() {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredentials) => {
       const user = userCredentials.user;
+      localStorage.setItem("auth", "true");
       window.location.href = "index.html";
     })
     .catch((error) => {
@@ -86,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // logout function
 function LogoutUser() {
   signOut(auth).then(() => {
+    localStorage.setItem("auth");
     window.location.href = "login.html";
   });
 }
