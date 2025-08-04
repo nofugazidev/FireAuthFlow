@@ -130,4 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleMenu();
 });
 
+// protected route for the dashboard
+
+function requireAuth(){
+  if(localStorage.getItem("auth") != "true"){
+    window.location.href = 'login.html'
+  }
+}
+
+requireAuth();
+
 
