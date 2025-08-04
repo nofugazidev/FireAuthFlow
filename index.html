@@ -50,15 +50,10 @@
         </div>
       </div>
     </div>
-    <script src="app.js" type="module">
-            function requireAuth(){
-        if(localStorage.getItem("auth") != "true"){
-          window.location.href = 'login.html'
-        }
-      }
-
-      requireAuth();
+    <script src="app.js" type="module"></script>
+    <script src="protect.js"></script>
+    <script>
+      requireAuth()
     </script>
-    <!-- <script></script> -->
   </body>
 </html>
