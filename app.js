@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // logout function
 function LogoutUser() {
   signOut(auth).then(() => {
-    // localStorage.setItem("auth");
     window.location.href = "login.html";
   });
 }
