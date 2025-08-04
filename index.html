@@ -51,7 +51,13 @@
       </div>
     </div>
     <script src="app.js" type="module">
-      // requireAuth()
+            function requireAuth(){
+        if(localStorage.getItem("auth") != "true"){
+          window.location.href = 'login.html'
+        }
+      }
+
+      requireAuth();
     </script>
     <!-- <script></script> -->
   </body>
