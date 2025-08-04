@@ -3,3 +3,5 @@ function requireAuth() {
     window.location.href = "login.html";
   }
 }
+
+requireAuth()
