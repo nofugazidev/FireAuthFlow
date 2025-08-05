@@ -9,11 +9,12 @@
 
 .container {
   /* background: linear-gradient(179deg,rgba(14, 105, 59, 0.85) 9%, rgba(191, 98, 98, 0.95) 54%, rgba(242, 224, 27, 0.53) 83%); */
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background: url("/assets/hero-image.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  /* overflow-x: hidden; */
 }
 
 .container nav {
@@ -65,10 +66,48 @@ nav #menu-icon,
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
+}
+
+/* prompt area */
+
+main {
+  position: fixed;
+  bottom: 0;
+  padding: 40px;
+  width: 100%;
+}
+
+.prompt-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.prompt-input textarea {
+  width: 100%;
+  padding: 10px;
+  height: 100px;
+  outline: none;
+  border: none;
+}
+
+.prompt-input button {
+  background: #000;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 10px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 @media (max-width: 426px) {
+  .container {
+  height: 100dvh;
+}
   .container nav {
     padding: 10px 20px;
   }
@@ -104,13 +143,13 @@ li {
   }
 
   #mobile-menu.show {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  background: white;
-  padding: 20px;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+  }
 
   #mobile-menu .nav-items {
     display: flex;
@@ -122,9 +161,8 @@ li {
     text-transform: capitalize;
     color: #000;
     font-weight: 600;
-    border-bottom: 1px solid black;   
+    border-bottom: 1px solid black;
   }
-
 
   #mobile-menu .btn button {
     display: block;
@@ -135,5 +173,24 @@ li {
     border: none;
     cursor: pointer;
     text-transform: capitalize;
+  }
+
+  .prompt-input textarea {
+    width: 100%;
+    padding: 10px;
+    height: 70px;
+    outline: none;
+    border: none;
+  }
+
+  .prompt-input button {
+    background: #000;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 8px;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 14px;
   }
 }

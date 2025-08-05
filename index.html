@@ -49,11 +49,19 @@
           <button type="submit" id="mobileLogOutButton">logout</button>
         </div>
       </div>
+
+      <main>
+        <div class="prompt-input">
+          <textarea type="text" placeholder="ask me anything" ></textarea>
+          <button type="submit">enter</button>
+        </div>
+      </main>
+
     </div>
     <script src="app.js" type="module"></script>
     <script src="protect.js"></script>
     <script>
-      requireAuth()
+      requireAuth();
     </script>
   </body>
 </html>
